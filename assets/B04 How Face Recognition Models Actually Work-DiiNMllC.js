@@ -8,8 +8,6 @@ slug: "metric-learning-face-recognition"\r
 \r
 # Metric Learning Explained: How Face Recognition Models Actually Work\r
 \r
-![Metric Learning for Face Recognition](/blog-images/B04.png)\r
-\r
 Face recognition systems today don’t work like traditional classifiers. Instead of predicting a name directly, modern systems rely on **metric learning**, a powerful approach that learns how to measure similarity between faces.\r
 \r
 In this article, I’ll explain **how metric learning works**, why it’s used in face recognition, and how models like **FaceNet** apply it in practice.\r

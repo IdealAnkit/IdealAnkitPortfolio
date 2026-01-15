@@ -8,8 +8,6 @@ slug: "contact-form-google-sheets"\r
 \r
 # How to Build and Deploy a Full-Stack Contact Form Using Google Sheets\r
 \r
-![Full-Stack Contact Form Using Google Sheets](/blog-images/B03.png)\r
-\r
 A contact form is a must-have for any portfolio or business website. In this tutorial, I’ll show how to build a **full-stack contact form** that stores messages directly into **Google Sheets**, without using a traditional backend server.\r
 \r
 ---\r

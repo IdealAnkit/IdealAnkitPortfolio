@@ -8,8 +8,6 @@ slug: "drone-based-intruder-detection-yolov8"\r
 \r
 # Building a Drone-Based Intruder Detection System with YOLOv8\r
 \r
-![Drone-Based Intruder Detection System](/blog-images/B02.png)\r
-\r
 Aerial surveillance is transforming modern security, offering dynamic viewpoints that fixed cameras simply cannot match. In this project, I engineered a **Drone-Based Intruder Detection System** powered by **YOLOv8**—a state-of-the-art object detection model—capable of identifying human intruders in real-time from a moving aerial feed.\r
 \r
 The core challenge? **Latency.** Processing high-resolution drone footage while maintaining a stable frame rate required a highly optimized pipeline.\r
