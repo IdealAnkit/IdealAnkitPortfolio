@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Theme Colors */
+  --color-bg-light: #f0f4f8;
+  --color-text-light: #000000;
+  --color-primary-light: #3b82f6;
+  --color-secondary-light: #8b5cf6;
+
+  /* Dark Theme Colors */
+  --color-bg-dark: #0f172a;
+  --color-text-dark: #f1f5f9;
+  --color-primary-dark: #60a5fa;
+  --color-secondary-dark: #a78bfa;
+
+  /* Glass Effects */
+  --glass-bg-light: rgba(255, 255, 255, 0.6);
+  /* Transparent for pattern visibility */
+  --glass-bg-dark: rgba(30, 41, 59, 0.6);
+  --glass-border-light: rgba(0, 0, 0, 0.1);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  /* Pattern Colors - Light Mode */
+  --pat-1: #ffffff;
+  --pat-2: #e2e8f0;
+  /* slate-200 */
+  --blur-strength: 16px;
+
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-light);
+  --glass-bg: var(--glass-bg-light);
+  --glass-border: var(--glass-border-light);
+
+  /* Shared Pattern Definition */
+  --pattern-img:
+    radial-gradient(circle farthest-side at 0% 50%, var(--pat-1) 23.5%, transparent 0) 21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%, var(--pat-2) 24%, transparent 0) 19px 30px,
+    linear-gradient(var(--pat-1) 14%, transparent 0, transparent 85%, var(--pat-1) 0) 0 0,
+    linear-gradient(150deg, var(--pat-1) 24%, var(--pat-2) 0, var(--pat-2) 26%, transparent 0, transparent 74%, var(--pat-2) 0, var(--pat-2) 76%, var(--pat-1) 0) 0 0,
+    linear-gradient(30deg, var(--pat-1) 24%, var(--pat-2) 0, var(--pat-2) 26%, transparent 0, transparent 74%, var(--pat-2) 0, var(--pat-2) 76%, var(--pat-1) 0) 0 0,
+    linear-gradient(90deg, var(--pat-2) 2%, var(--pat-1) 0, var(--pat-1) 98%, var(--pat-2) 0%) 0 0 var(--pat-1);
+  /* Slate 800 for Custom Cards */
+  --color-slate-800: #1e293b;
+}
+
+.dark {
+  /* Pattern Colors - Dark Mode (User Provided) */
+  --pat-1: #282828;
+  --pat-2: #2c3539;
+
+
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+  --glass-bg: var(--glass-bg-dark);
+  --glass-border: var(--glass-border-dark);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Liquid Background Elements */
+/* Geometric Pattern Background (Uiverse) */
+.uiverse-pattern {
+  width: 100%;
+  height: 100%;
+  background: var(--pattern-img);
+  background-size: 40px 60px;
+}
+
+/* Glass Utility Classes */
+/* Glass Utility Classes */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  /* Contains the zoomed pattern */
+  isolation: isolate;
+  /* New stacking context */
+
+  /* Blur the world BEHIND the card */
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+
+  border: 1px solid var(--glass-border);
+  box-shadow: 00px 00px 10px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+}
+
+/* Layer 1: Zoomed Pattern (Behind Tint) */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  /* Make it bigger to allow safe scaling without edges */
+  z-index: -2;
+  background: var(--pattern-img);
+  background-size: 40px 60px;
+  /* Base size */
+  transform: scale(1.35);
+  /* VISUAL ZOOM (Reduced) */
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+/* Layer 2: Glass Tint (Overlay) */
+.glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--glass-bg);
+  /* This is the semi-transparent color */
+  pointer-events: none;
+}
+
+/* Explicit Strong Tag Override for Light Mode */
+html:not(.dark) .glass-card strong {
+  color: #0c0c0c !important;
+  font-weight: 800 !important;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* 
+   SAFETY NET: Force Black Text in Light Mode 
+   This ensures high contrast regardless of utility classes used.
+*/
+html:not(.dark) body {
+  color: #000000 !important;
+}
+
+html:not(.dark) p,
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) li,
+html:not(.dark) span,
+html:not(.dark) strong {
+  color: #000000 !important;
+}
+
+/* Keep links blue */
+html:not(.dark) a {
+  color: #2563eb;
+}
+
+/* Allow gradient text to still work if explicit */
+html:not(.dark) .bg-clip-text {
+  color: transparent !important;
+}
+
+/* Typography Plugin Overrides for Markdown */
+:root:not(.dark) .prose {
+  color: #000000 !important;
+}
+
+:root:not(.dark) .prose strong,
+:root:not(.dark) .prose h1,
+:root:not(.dark) .prose h2,
+:root:not(.dark) .prose h3 {
+  color: #000000 !important;
+}
+
+/* Home Page Profile Blob Animation */
+@keyframes blob-radius {
+  0% {
+    border-radius: 26% 74% 86% 14% / 7% 84% 16% 93%;
+  }
+
+  100% {
+    border-radius: 72% 28% 37% 63% / 75% 30% 70% 25%;
+  }
+}
+
+.profile-blob {
+  /* Dimensions matching user request */
+  height: 350px;
+  width: 350px;
+  /* (Scaled down slightly from 480/500 for better responsiveness, but keeping ratio close) */
+  object-fit: cover;
+  background: #000;
+  animation: blob-radius 10s alternate infinite linear;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .profile-blob {
+    height: 440px;
+    width: 420px;
+  }
+}
