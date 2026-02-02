@@ -33,7 +33,7 @@ const Blog = () => {
             {post.image && (
               <div className="w-full h-48 mb-6 overflow-hidden rounded-lg">
                  <img 
-                   src={post.image} 
+                   src={post.image.startsWith('/') ? `${import.meta.env.BASE_URL}${post.image.slice(1)}` : post.image} 
                    alt={post.title} 
                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                  />

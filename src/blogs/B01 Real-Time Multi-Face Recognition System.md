@@ -8,8 +8,6 @@ slug: "real-time-multi-face-recognition"
 
 # Designing a Real-Time Multi-Face Recognition System Using FaceNet and MTCNN
 
-![Real-Time Multi-Face Recognition System](/blog-images/B01.png)
-
 Real-time face recognition is a challenging computer vision problem that requires accuracy, speed, and robustness under real-world conditions. In this article, I’ll walk through how I designed a **multi-face recognition system** using **MTCNN for face detection** and **FaceNet for deep metric learning-based recognition**.
 
 This project focuses on handling multiple faces per frame, pose variations, threshold tuning, and real-time GPU-accelerated inference.

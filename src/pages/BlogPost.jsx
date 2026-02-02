@@ -54,9 +54,19 @@ const BlogPost = () => {
             {post.title}
           </h1>
           {post.description && (
-             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-3xl mx-auto">
+             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-3xl mx-auto mb-10">
                 {post.description}
              </p>
+          )}
+
+          {post.image && (
+            <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl mb-10">
+              <img 
+                src={post.image.startsWith('/') ? `${import.meta.env.BASE_URL}${post.image.slice(1)}` : post.image}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
           )}
         </header>
 
@@ -85,28 +95,37 @@ const BlogPost = () => {
 
               // Code
               code: ({node, inline, className, children, ...props}) => {
-                const match = /language-(\w+)/.exec(className || '');
-                return !inline ? (
-                  <div className="relative my-8 rounded-xl overflow-hidden bg-[#1e293b] shadow-2xl border border-gray-700">
-                    <div className="flex items-center justify-between px-4 py-2 bg-[#0f172a] border-b border-gray-700">
-                      <div className="flex gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                      </div>
-                      <span className="text-xs text-gray-400 font-mono">{match ? match[1] : 'code'}</span>
+                const match = /language-(\w+)/.exec(className || '')
+                return !inline && match ? (
+                  <div className="rounded-lg overflow-hidden my-6 shadow-md border border-gray-200 dark:border-gray-700">
+                    <div className="bg-gray-100 dark:bg-gray-800 px-4 py-2 text-xs font-mono text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700 flex justify-between">
+                      <span>{match[1]}</span>
                     </div>
-                    <pre className="p-6 overflow-x-auto text-sm md:text-base font-mono leading-relaxed text-gray-100">
-                      <code className={className} {...props}>
-                        {children}
-                      </code>
-                    </pre>
+                    <div className="overflow-x-auto">
+                      <pre className="bg-gray-50 dark:bg-[#0d1117] p-4 m-0 rounded-none text-sm md:text-base font-mono leading-relaxed text-gray-800 dark:text-gray-200">
+                        <code className={className} {...props}>
+                          {children}
+                        </code>
+                      </pre>
+                    </div>
                   </div>
                 ) : (
-                  <code className="bg-gray-100 dark:bg-gray-800 text-pink-600 dark:text-pink-400 px-1.5 py-0.5 rounded font-mono text-sm font-medium border border-gray-200 dark:border-gray-700" {...props}>
+                  <code className={`${className} bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-pink-600 dark:text-pink-400`} {...props}>
                     {children}
                   </code>
                 )
+              },
+              img: ({node, ...props}) => {
+                const src = props.src.startsWith('/') 
+                  ? `${import.meta.env.BASE_URL}${props.src.slice(1)}` 
+                  : props.src;
+                return (
+                  <img 
+                    {...props} 
+                    src={src} 
+                    className="rounded-lg shadow-md my-8 w-full object-cover max-h-[500px]" 
+                  />
+                );
               },
 
               // Links
