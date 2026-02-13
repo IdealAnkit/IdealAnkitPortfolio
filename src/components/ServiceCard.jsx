@@ -8,7 +8,7 @@ const ServiceCard = ({ service, currency }) => {
   const whatsappUrl = `https://wa.me/917903905731?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <div className="bg-[color-mix(in_oklab,var(--color-slate-800)_60%,transparent)] hover:bg-[color-mix(in_oklab,var(--color-slate-800),transparent_80%)] backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-6 flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+    <div className="bg-[color-mix(in_oklab,var(--color-slate-800)_60%,transparent)] hover:bg-[color-mix(in_oklab,var(--color-slate-800),transparent_80%)] backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-5 md:p-6 flex flex-col h-full transform transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-xl group">
       {/* Icon Header */}
       <div className="flex items-center gap-4 mb-6">
         <div className="p-3 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 group-hover:bg-blue-500/20 transition-colors">

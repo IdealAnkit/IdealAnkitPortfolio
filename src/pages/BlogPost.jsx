@@ -42,7 +42,7 @@ const BlogPost = () => {
       </Link>
 
       {/* Article Container */}
-      <article className="glass-card p-8 md:p-12">
+      <article className="glass-card p-4 md:p-12">
         
         {/* Article Header */}
         <header className="mb-12 text-center border-b border-gray-200 dark:border-gray-700 pb-12">
@@ -102,7 +102,7 @@ const BlogPost = () => {
                       <span>{match[1]}</span>
                     </div>
                     <div className="overflow-x-auto">
-                      <pre className="bg-gray-50 dark:bg-[#0d1117] p-4 m-0 rounded-none text-sm md:text-base font-mono leading-relaxed text-gray-800 dark:text-gray-200">
+                      <pre className="bg-gray-50 dark:bg-[#0d1117] p-4 m-0 rounded-none text-sm md:text-base font-mono leading-relaxed text-gray-800 dark:text-gray-200 min-w-full w-fit">
                         <code className={className} {...props}>
                           {children}
                         </code>

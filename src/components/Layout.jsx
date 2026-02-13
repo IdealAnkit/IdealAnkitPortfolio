@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import MobileNextButton from './MobileNextButton';
+
 
 const Layout = ({ children }) => {
   const { theme } = useTheme();
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
 
-      <MobileNextButton />
+
 
       {/* Global Footer */}
       <div className="relative z-10">

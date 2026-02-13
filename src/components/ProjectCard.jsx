@@ -3,7 +3,7 @@ import { Github, ExternalLink, Folder } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="glass-card flex flex-col h-full transition-all duration-300 hover:scale-[1.02] group overflow-hidden">
+    <div className="glass-card flex flex-col h-full transition-all duration-300 md:hover:scale-[1.02] group overflow-hidden">
       
       {/* Project Image 16:9 */}
       <div className="w-full aspect-video overflow-hidden">
@@ -14,7 +14,7 @@ const ProjectCard = ({ project }) => {
         />
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-5 md:p-6 flex flex-col flex-grow">
         {/* Header: Icon + Title */}
         <div className="flex items-start justify-between mb-4">
           <div className="p-3 rounded-full bg-blue-100/50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">

@@ -52,7 +52,7 @@ export const aboutData = {
       degree: "B.Tech – Computer Science & Engineering",
       institution: "Purnea College of Engineering, Purnia",
       period: "Nov 2022 – Present",
-      description: "CGPA: 8.62 | Expected Graduation: June 2026"
+      description: "CGPA: 8.64 | Expected Graduation: June 2026"
     },
     {
       id: 2,

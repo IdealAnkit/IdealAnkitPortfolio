@@ -6,8 +6,13 @@ import { getBlogPosts } from '../utils/blogLoader';
 const Blog = () => {
   const [posts, setPosts] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    getBlogPosts().then(setPosts);
+    getBlogPosts().then((data) => {
+      setPosts(data);
+      setLoading(false);
+    });
   }, []);
 
   return (
@@ -25,7 +30,20 @@ const Blog = () => {
 
       {/* Blog Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {posts.map((post) => (
+        {loading ? (
+          // Skeleton Loader
+          Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className="glass-card p-6 md:p-8 flex flex-col h-full animate-pulse">
+              <div className="w-full h-48 mb-6 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
+              <div className="h-4 w-24 bg-gray-300 dark:bg-gray-700 rounded mb-4"></div>
+              <div className="h-8 w-3/4 bg-gray-300 dark:bg-gray-700 rounded mb-3"></div>
+              <div className="h-4 w-full bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
+              <div className="h-4 w-2/3 bg-gray-300 dark:bg-gray-700 rounded mb-6"></div>
+              <div className="h-4 w-32 bg-gray-300 dark:bg-gray-700 rounded mt-auto"></div>
+            </div>
+          ))
+        ) : (
+          posts.map((post) => (
           <article 
             key={post.slug} 
             className="glass-card p-6 md:p-8 flex flex-col h-full transition-all duration-300 hover:scale-[1.01] hover:shadow-lg group"
@@ -64,7 +82,7 @@ const Blog = () => {
               </Link>
             </div>
           </article>
-        ))}
+        )))}
       </div>
 
     </div>
