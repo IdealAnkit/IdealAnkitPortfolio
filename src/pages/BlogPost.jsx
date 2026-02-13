@@ -135,7 +135,7 @@ const BlogPost = () => {
               hr: ({node, ...props}) => <hr className="my-12 border-t border-gray-200 dark:border-gray-700" {...props} />,
               
               // Images
-              img: ({node, ...props}) => <img className="rounded-xl shadow-lg my-8 w-full border border-gray-200 dark:border-gray-700" {...props} />,
+
             }}
           >
             {post.content}
