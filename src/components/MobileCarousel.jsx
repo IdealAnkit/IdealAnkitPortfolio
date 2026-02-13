@@ -64,16 +64,19 @@ const MobileCarousel = ({ children, interval = 5000 }) => {
       {/* Scroll Container */}
       <div 
         ref={scrollRef}
-        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+        className="flex items-stretch overflow-x-auto snap-x snap-mandatory scrollbar-hide"
         onScroll={handleScroll}
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setTimeout(() => setIsPaused(false), 3000)}
       >
-        {React.Children.map(children, (child) => (
-          <div className="w-full flex-shrink-0 snap-center h-full">
-            {child}
-          </div>
-        ))}
+        {React.Children.map(children, (child) => {
+          if (!React.isValidElement(child)) return null;
+          return (
+            <div className="w-full flex-shrink-0 snap-center h-full flex flex-col">
+              {React.cloneElement(child, { className: `${child.props.className || ''} h-full` })}
+            </div>
+          );
+        })}
       </div>
 
       {/* Left Arrow */}

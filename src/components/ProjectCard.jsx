@@ -1,9 +1,9 @@
 import React from 'react';
 import { Github, ExternalLink, Folder } from 'lucide-react';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, className = "" }) => {
   return (
-    <div className="glass-card flex flex-col h-full transition-all duration-300 md:hover:scale-[1.02] group overflow-hidden">
+    <div className={`glass-card flex flex-col h-full transition-all duration-300 md:hover:scale-[1.02] group overflow-hidden ${className}`}>
       
       {/* Project Image 16:9 */}
       <div className="w-full aspect-video overflow-hidden">
