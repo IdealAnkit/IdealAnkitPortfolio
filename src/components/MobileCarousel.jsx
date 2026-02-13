@@ -59,7 +59,7 @@ const MobileCarousel = ({ children, interval = 5000 }) => {
   };
 
   return (
-    <div className="relative w-full group">
+    <div className="relative w-full group rounded-[35px] overflow-hidden">
       
       {/* Scroll Container */}
       <div 
@@ -70,7 +70,7 @@ const MobileCarousel = ({ children, interval = 5000 }) => {
         onTouchEnd={() => setTimeout(() => setIsPaused(false), 3000)}
       >
         {React.Children.map(children, (child) => (
-          <div className="w-full flex-shrink-0 snap-center px-1 h-full">
+          <div className="w-full flex-shrink-0 snap-center h-full">
             {child}
           </div>
         ))}

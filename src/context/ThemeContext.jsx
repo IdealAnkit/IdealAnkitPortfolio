@@ -8,9 +8,8 @@ export const ThemeProvider = ({ children }) => {
     if (savedTheme) {
       return savedTheme;
     }
-    // Default to light theme if no preference is saved, ignoring system preference as per user request
-    return 'light';
-    return 'light';
+    // Default to dark theme if no preference is saved
+    return 'dark';
   });
 
   useEffect(() => {
