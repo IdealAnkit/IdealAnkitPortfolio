@@ -1,197 +1,45 @@
-import React, { useState, useRef } from 'react';
-import ProfileImage from '../assets/IdealAnkit.jpg';
-import Typewriter from '../components/Typewriter';
-import { Download, Mail } from 'lucide-react';
-import Resume from '../assets/ANKIT_KUMAR_RESUME.pdf';
-import servicesData from '../data/servicesData';
-import ServiceCard from '../components/ServiceCard';
+import React, { Suspense } from 'react';
+import HomeHero from '../components/sections/HomeHero';
+
+// Lazy load below-the-fold components for performance optimization
+const HomeAbout = React.lazy(() => import('../components/sections/HomeAbout'));
+const HomeServices = React.lazy(() => import('../components/sections/HomeServices'));
+const HomeProjects = React.lazy(() => import('../components/sections/HomeProjects'));
+const HomeBlog = React.lazy(() => import('../components/sections/HomeBlog'));
+const HomeContact = React.lazy(() => import('../components/sections/HomeContact'));
+
+// Loading Fallback Component
+const SectionLoader = () => (
+  <div className="w-full h-96 flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const Home = () => {
-  const [currency, setCurrency] = useState('INR');
-  const [showAll, setShowAll] = useState(false);
-  const servicesRef = useRef(null);
-
-  const handleShowMore = () => {
-    setShowAll(true);
-    // Short timeout to ensure state update potentially triggers render before scroll, 
-    // though usually immediate is fine. Scrolling to title helps context.
-    setTimeout(() => {
-      servicesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  };
-
-  const handleShowLess = () => {
-    setShowAll(false);
-    servicesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
-    <div className="w-full min-h-screen">
-      <div className="flex flex-col items-center justify-start w-full pt-2 pb-8 px-0 md:pt-0 md:pb-12">
-        
-        <div className="glass-card p-4 md:p-10 max-w-6xl w-full mx-auto flex flex-col lg:flex-row items-center gap-10 transform transition-all duration-500 hover:scale-[1.01]">
-          
-          {/* Left Side: Text Content */}
-          <div className="flex-1 min-w-[300px] md:min-w-[480px] text-center lg:text-left order-1">
-            <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              Ankit Kumar
-            </h1>
-            
-            <h2 className="text-lg md:text-2xl mb-6 text-black dark:text-gray-300 font-light tracking-wide min-h-[1.5em]">
-               I'm a <Typewriter words={["Software Engineer", "AI/ML Engineer", "Full Stack Developer", "Creative Technologist"]} />
-            </h2>
-            
-            <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto lg:mx-0 rounded-full mb-6 md:mb-8 opacity-80"></div>
+    <div className="w-full min-h-screen flex flex-col gap-0">
+      
+      {/* Hero Section (Static Import for Instant LCP) */}
+      <HomeHero />
 
-            <p className="text-base md:text-xl text-black dark:text-gray-400 leading-relaxed">
-              Full-stack and AI/ML engineer building scalable web applications and intelligent systems using <span className="px-1.5 py-0.5 rounded-md bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium">React</span>, <span className="px-1.5 py-0.5 rounded-md bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 font-medium">JavaScript</span>, <span className="px-1.5 py-0.5 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 font-medium">Python</span>, <span className="px-1.5 py-0.5 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 font-medium">Node.js</span>, <span className="px-1.5 py-0.5 rounded-md bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium">Flask</span>, <span className="px-1.5 py-0.5 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 font-medium">PHP</span>, <span className="px-1.5 py-0.5 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 font-medium">machine learning</span>, <span className="px-1.5 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-medium">computer vision</span>, and <span className="px-1.5 py-0.5 rounded-md bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 font-medium">modern databases
-              {/* Full-stack and AI/ML engineer building scalable web applications and intelligent systems using <span className="px-2 py-0.5 rounded-md bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 font-medium">React, JavaScript, Python, Node.js, Flask, PHP, machine learning, computer vision, and modern databases */}
-              </span>.
-              <br /><br />
-              <span className="text-sm opacity-70 italic block mt-4">
-                "Crafting digital solutions with precision and liquid fluidity."
-              </span>
-            </p>
+      {/* Lazy Loaded Sections */}
+      <Suspense fallback={<SectionLoader />}>
+        {/* About Preview */}
+        <HomeAbout />
 
-            {/* Call to Action Buttons */}
-            <div className="mt-8 md:mt-10 flex flex-wrap gap-4 justify-center lg:justify-start">
-              
-              {/* Hire Me Button (Primary) */}
-              <a 
-                href="mailto:mrankitkumar1530@gmail.com"
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all active:scale-95 group"
-              >
-                <Mail size={20} className="text-white" />
-                <span className="text-white">Hire Me</span>
-              </a>
+        {/* Services Section */}
+        <HomeServices />
 
-              {/* Download CV Button (Secondary) */}
-              <a 
-                href={Resume} 
-                download="ANKIT_KUMAR_RESUME.pdf"
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 !text-white font-semibold shadow-lg shadow-blue-500/30 hover:scale-105 transition-transform active:scale-95 group"
-              >
-                <Download size={20} className="!text-white" />
-                <span className="!text-white">Download CV</span>
-              </a>
+        {/* Projects Preview */}
+        <HomeProjects />
 
-              {/* WhatsApp Button */}
-              <a 
-                href="https://wa.me/917903905731" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-transparent border-2 border-green-500 text-green-600 dark:text-green-400 font-semibold shadow-lg shadow-green-500/10 hover:bg-green-50 dark:hover:bg-green-900/10 hover:scale-105 transition-all active:scale-95"
-              >
-                {/* WhatsApp Logo SVG */}
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="20" 
-                  height="20" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                <span>Chat on WhatsApp</span>
-              </a>
+        {/* Blog Preview */}
+        <HomeBlog />
 
-            </div>
-          </div>
+        {/* Contact CTA */}
+        <HomeContact />
+      </Suspense>
 
-          {/* Right Side: Animated Profile Image */}
-          <div className="flex-1 min-w-[280px] flex justify-center order-2">
-             <img 
-               src={ProfileImage} 
-               alt="Ideal Ankit" 
-               className="profile-blob"
-             />
-          </div>
-
-        </div>
-      </div>
-
-      {/* Professional Services Section */}
-      <div 
-        ref={servicesRef}
-        className="w-full py-16 px-0 md:px-4 max-w-7xl mx-auto scroll-mt-20"
-      >
-        {/* Services Grid Container - Now the Glass Card */}
-        <div className="glass-card p-6 md:p-10 max-w-7xl mx-auto">
-          
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl md:text-5xl font-bold text-black dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-white dark:to-gray-300 mb-2">
-                Professional Services
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Premium tailored solutions for your digital needs
-              </p>
-            </div>
-
-            {/* Currency Toggle */}
-            <div className="flex items-center gap-2 p-1 bg-white/50 dark:bg-slate-800/50 rounded-full border border-gray-200 dark:border-gray-700 backdrop-blur-sm">
-              <button
-                onClick={() => setCurrency('INR')}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  currency === 'INR' 
-                    ? 'bg-blue-600 text-white shadow-md' 
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700'
-                }`}
-              >
-                ₹ INR
-              </button>
-              <button
-                onClick={() => setCurrency('USD')}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  currency === 'USD' 
-                    ? 'bg-blue-600 text-white shadow-md' 
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700'
-                }`}
-              >
-                $ USD
-              </button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-            {servicesData.map((service, index) => (
-              <div 
-                key={service.id} 
-                className={`${index >= 3 && !showAll ? 'hidden md:block' : 'block'}`}
-              >
-                <ServiceCard 
-                  service={service} 
-                  currency={currency} 
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile View All Button */}
-          {!showAll && (
-            <div className="mt-8 flex justify-center md:hidden">
-              <button
-                onClick={handleShowMore}
-                className="px-6 py-2 rounded-full bg-blue-600 text-white font-semibold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all active:scale-95"
-              >
-                View All Services
-              </button>
-            </div>
-          )}
-          
-          {showAll && (
-            <div className="mt-8 flex justify-center md:hidden">
-              <button
-                onClick={handleShowLess}
-                className="px-6 py-2 rounded-full bg-gray-200 dark:bg-slate-700 text-gray-800 dark:text-gray-200 font-medium hover:bg-gray-300 dark:hover:bg-slate-600 transition-all active:scale-95"
-              >
-                Show Less
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
     </div>
   );
 };

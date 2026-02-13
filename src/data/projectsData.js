@@ -4,6 +4,7 @@ import P3 from '../assets/Project_IMG/P03.jpg';
 import P4 from '../assets/Project_IMG/P04.jpg';
 import P5 from '../assets/Project_IMG/P05.jpg';
 import P6 from '../assets/Project_IMG/P06.jpg';
+import P7 from '../assets/Project_IMG/P07.jpg';
 
 export const projectsData = [
   {
@@ -30,6 +31,17 @@ export const projectsData = [
   },
   {
     id: 3,
+    title: "Breast Cancer Detection",
+    description: "Built a Logistic Regression model from scratch using PyTorch to detect malignancy in breast cancer cells with ~91% accuracy, focusing on the mathematics of neural networks.",
+    tags: ["PyTorch", "Deep Learning", "Python", "Medical AI", "Data Science"],
+    image: P7,
+    links: {
+      demo: "https://github.com/IdealAnkit/breast-cancer-detection-pytorch",
+      github: "https://github.com/IdealAnkit/breast-cancer-detection-pytorch"
+    }
+  },
+  {
+    id: 4,
     title: "Gender-Vision Detection",
     description: "Implemented a real-time gender detection system combining CNNs and Random Forest models, optimized for live camera feeds with high accuracy under practical conditions.",
     tags: ["Python", "OpenCV", "CNN", "RandomForest", "Real-Time"],
@@ -40,7 +52,7 @@ export const projectsData = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: "Classical ML Projects",
     description: "Developed multiple classical machine learning projects covering classification and regression with feature analysis, evaluation metrics, and real-world predictive modeling.",
     tags: ["Python", "Scikit-learn", "Pandas", "EDA", "Regression"],
@@ -51,7 +63,7 @@ export const projectsData = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: "Student Management System",
     description: "Engineered a full-stack student management system with authentication, CRUD operations, and database integration to streamline academic record handling across devices.",
     tags: ["React", "PHP", "MySQL", "REST APIs", "Full-Stack"],
@@ -62,7 +74,7 @@ export const projectsData = [
     }
   },
   {
-    id: 6,
+    id: 7,
     title: "TimeKeeper Mobile App",
     description: "Built a cross-platform mobile timer application featuring count-up and count-down modes, theme switching, persistent storage, and smooth performance across devices.",
     tags: ["React Native", "TypeScript", "Mobile App", "UI/UX"],

@@ -37,7 +37,7 @@ const servicesData = [
       'Responsive & High-Performance Websites',
       'React, Next.js, MERN Stack',
       'SEO Friendly Architecture',
-      'Modern UI/UX Design'
+      'AI-Integrated & Scalable Web Solutions'
     ],
     priceINR: '₹25,000+',
     priceUSD: '$300+',

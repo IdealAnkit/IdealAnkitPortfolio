@@ -4,9 +4,7 @@ import fm from 'front-matter';
 const modules = import.meta.glob('../blogs/*.md', { query: '?raw', import: 'default' });
 
 export const getBlogPosts = async () => {
-  const posts = [];
-
-  for (const path in modules) {
+  const promises = Object.keys(modules).map(async (path) => {
     const rawContent = await modules[path]();
     const { attributes, body } = fm(rawContent);
     
@@ -14,13 +12,15 @@ export const getBlogPosts = async () => {
     const filenameSlug = path.split('/').pop().replace('.md', '');
     const slug = attributes.slug || filenameSlug;
 
-    posts.push({
+    return {
       ...attributes,
       slug,
       content: body,
       path
-    });
-  }
+    };
+  });
+
+  const posts = await Promise.all(promises);
 
   // Sort by date descending
   return posts.sort((a, b) => new Date(b.date) - new Date(a.date));

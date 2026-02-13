@@ -145,6 +145,7 @@ html:not(.dark) h3,
 html:not(.dark) h4,
 html:not(.dark) li,
 html:not(.dark) span,
+html:not(.dark) label,
 html:not(.dark) strong {
   color: #000000 !important;
 }
