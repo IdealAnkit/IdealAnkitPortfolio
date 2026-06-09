@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local deploy guide kept only in this workspace
+LOCAL_DEPLOY_GUIDE.md
