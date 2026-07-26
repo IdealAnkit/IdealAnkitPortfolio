@@ -20,16 +20,20 @@ const HomeHero = () => {
             </h1>
             
             <h2 className="text-lg md:text-2xl mb-6 text-black dark:text-gray-300 font-light tracking-wide min-h-[1.5em]">
-               I'm a <Typewriter words={["Software Engineer", "AI/ML Engineer", "Full Stack Developer", "Creative Technologist"]} />
+               I'm a <Typewriter words={["AI Engineer", "Generative AI Engineer", "Agentic AI Developer", "Full Stack Developer", "Backend Engineer"]} />
             </h2>
             
             <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto lg:mx-0 rounded-full mb-6 md:mb-8 opacity-80"></div>
 
             <p className="text-base md:text-xl text-black dark:text-gray-400 leading-relaxed">
-              Full-stack and AI/ML engineer building scalable web applications and intelligent systems using <span className="px-1.5 py-0.5 rounded-md bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium">React</span>, <span className="px-1.5 py-0.5 rounded-md bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 font-medium">JavaScript</span>, <span className="px-1.5 py-0.5 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 font-medium">Python</span>, <span className="px-1.5 py-0.5 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 font-medium">Node.js</span>, <span className="px-1.5 py-0.5 rounded-md bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium">Flask</span>, <span className="px-1.5 py-0.5 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 font-medium">PHP</span>, <span className="px-1.5 py-0.5 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 font-medium">machine learning</span>, <span className="px-1.5 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-medium">computer vision</span>, and <span className="px-1.5 py-0.5 rounded-md bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 font-medium">modern databases</span>.
+              I build <span className="px-1.5 py-0.5 rounded-md bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 font-medium">AI-powered products</span> using <span className="px-1.5 py-0.5 rounded-md bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 font-medium">LLMs</span>, <span className="px-1.5 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-medium">Agentic AI</span>, <span className="px-1.5 py-0.5 rounded-md bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 font-medium">LangChain</span>, and <span className="px-1.5 py-0.5 rounded-md bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 font-medium">LangGraph</span>. From <span className="px-1.5 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 font-medium">intelligent agents</span> and <span className="px-1.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 font-medium">RAG pipelines</span> to <span className="px-1.5 py-0.5 rounded-md bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium">scalable backend systems</span> and <span className="px-1.5 py-0.5 rounded-md bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 font-medium">modern web applications</span>, I turn complex ideas into production-ready software.
               <br /><br />
+              <span className="text-sm md:text-base text-black dark:text-gray-400 font-medium block">
+                Python • FastAPI • LangChain • LangGraph • OpenAI • React • Node.js • PostgreSQL • Docker
+              </span>
+              <br />
               <span className="text-sm opacity-70 italic block mt-4">
-                "Crafting digital solutions with precision and liquid fluidity."
+                "Building AI systems that understand, reason, and solve real-world problems."
               </span>
             </p>
 

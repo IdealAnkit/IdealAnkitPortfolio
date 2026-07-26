@@ -1,5 +1,5 @@
 export const aboutData = {
-  summary: "I’m a Computer Science engineer working at the intersection of full-stack development and applied AI/ML. I build scalable web applications, robust APIs, and intelligent systems using React, JavaScript, Python, and modern backend technologies. My experience includes machine learning, computer vision, data analysis, and system design, with a strong foundation in DSA, DBMS, OS, and OOP.",
+  summary: "I’m a Computer Science engineer focused on building at the intersection of full-stack development and AI engineering. I build AI-powered products, agentic workflows, and scalable web applications using React, Python, FastAPI, Node.js, and modern backend technologies. My work spans LLMs, RAG, LangChain, LangGraph, computer vision, and system design, backed by a strong foundation in DSA, DBMS, OS, and OOP.",
   
   skills: [
     { category: "Programming Languages", items: ["Python", "JavaScript", "SQL", "Java", "C++", "C"] },

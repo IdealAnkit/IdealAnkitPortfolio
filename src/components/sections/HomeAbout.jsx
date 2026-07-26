@@ -29,13 +29,13 @@ const HomeAbout = () => {
               
               <div className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
                 <p>
-                  I’m a <span className="font-semibold text-gray-900 dark:text-white">Computer Science engineer</span> working at the intersection of <span className="text-blue-600 dark:text-blue-400 font-medium">full-stack development</span> and <span className="text-purple-600 dark:text-purple-400 font-medium">applied AI/ML</span>.
+                  I’m a <span className="font-semibold text-gray-900 dark:text-white">Computer Science engineer</span> focused on building at the intersection of <span className="text-blue-600 dark:text-blue-400 font-medium">full-stack development</span> and <span className="text-purple-600 dark:text-purple-400 font-medium">AI engineering</span>.
                 </p>
                 <p className="mt-4">
-                  I build scalable web applications, robust APIs, and intelligent systems using <span className="font-medium text-gray-900 dark:text-gray-100">React, JavaScript, Python</span>, and modern backend technologies.
+                  I build <span className="font-medium text-gray-900 dark:text-gray-100">AI-powered products, agentic workflows, and scalable web applications</span> using <span className="font-medium text-gray-900 dark:text-gray-100">React, Python, FastAPI, Node.js</span>, and modern backend technologies.
                 </p>
                 <p className="mt-4 text-base md:text-lg text-gray-600 dark:text-gray-400">
-                  My experience includes machine learning, computer vision, data analysis, and system design, with a strong foundation in <span className="italic text-gray-800 dark:text-gray-200">DSA, DBMS, OS, and OOP</span>.
+                  My work spans <span className="text-gray-800 dark:text-gray-200 font-medium">LLMs, RAG, LangChain, LangGraph, computer vision, and system design</span>, backed by a strong foundation in <span className="italic text-gray-800 dark:text-gray-200">DSA, DBMS, OS, and OOP</span>.
                 </p>
               </div>
 
@@ -97,6 +97,28 @@ const HomeAbout = () => {
                       {['React', 'Node.js', 'MongoDB', 'AWS'].map((tech) => (
                         <span key={tech} className="relative z-10 px-2 py-1 !bg-white dark:bg-gray-700 rounded-md text-xs font-bold !text-black dark:text-gray-200 border border-gray-300 dark:border-gray-600 shadow-sm" style={{ backgroundColor: 'white' }}>
                           {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tile 4: AI Systems */}
+              <div className="sm:col-span-2 group relative p-6 rounded-2xl bg-violet-500/10 dark:bg-violet-500/10 border border-violet-100 dark:border-white/10 transition-all hover:shadow-lg hover:shadow-violet-500/10 hover:-translate-y-1">
+                <div className="absolute right-0 bottom-0 opacity-10 dark:opacity-5 group-hover:scale-110 transition-transform duration-500">
+                  <Database size={96} />
+                </div>
+                <div className="relative z-10 flex flex-col sm:flex-row sm:items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-violet-500 text-white flex items-center justify-center shadow-lg shadow-violet-500/20 shrink-0">
+                    <Database size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">AI Systems</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {['LLMs', 'RAG', 'LangChain', 'LangGraph'].map((item) => (
+                        <span key={item} className="relative z-10 px-2 py-1 !bg-white dark:bg-gray-700 rounded-md text-xs font-bold !text-black dark:text-gray-200 border border-gray-300 dark:border-gray-600 shadow-sm" style={{ backgroundColor: 'white' }}>
+                          {item}
                         </span>
                       ))}
                     </div>
