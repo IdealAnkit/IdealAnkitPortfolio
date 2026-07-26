@@ -2,17 +2,13 @@ export const aboutData = {
   summary: "I’m a Computer Science engineer working at the intersection of full-stack development and applied AI/ML. I build scalable web applications, robust APIs, and intelligent systems using React, JavaScript, Python, and modern backend technologies. My experience includes machine learning, computer vision, data analysis, and system design, with a strong foundation in DSA, DBMS, OS, and OOP.",
   
   skills: [
-    { category: "Programming Languages", items: ["Java", "Python", "C++", "SQL"] },
-    { category: "Frontend Development", items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React"] },
-    { category: "Backend & API", items: ["Node.js", "Flask", "PHP", "RESTful APIs", "Authentication", "Real-time Data"] },
-    { category: "Databases", items: ["MySQL", "MongoDB", "Database Design", "Optimization"] },
-    { category: "Data Analytics", items: ["Data Analysis", "Excel", "NumPy", "Pandas", "Matplotlib"] },
-    { category: "Applied ML & AI", items: ["ML (Classification/Regression)", "Deep Learning", "CNNs", "Random Forest", "Model Tuning"] },
-    { category: "Generative AI", items: ["LLM Fundamentals", "Prompt Engineering", "AI Pipelines", "Chatbots"] },
-    { category: "Computer Vision", items: ["OpenCV", "Object Detection", "Image Processing", "YOLOv8"] },
-    { category: "Tools & Platforms", items: ["Git & GitHub", "VS Code", "IntelliJ IDEA", "Google Colab", "XAMPP"] },
-    { category: "CS Fundamentals", items: ["DSA", "OS", "DBMS", "OOP"] },
-    { category: "Soft Skills", items: ["Problem Solving", "Team Collaboration", "Client Communication", "Analytical Thinking"] }
+    { category: "Programming Languages", items: ["Python", "JavaScript", "SQL", "Java", "C++", "C"] },
+    { category: "Generative AI & Agentic AI", items: ["LLMs", "Agentic AI", "AI Agents", "Multi-Agent Systems", "Retrieval-Augmented Generation (RAG)", "LangChain", "LangGraph", "Prompt Engineering", "Embedding Models", "Vector Databases", "LLM API Integration"] },
+    { category: "Backend & APIs", items: ["FastAPI", "Flask", "Node.js", "Express.js", "REST APIs", "WebSockets", "Server-Sent Events (SSE)", "JWT Authentication", "Async Programming", "Microservices"] },
+    { category: "AI/ML & Computer Vision", items: ["PyTorch", "TensorFlow", "OpenCV", "YOLOv8", "Convolutional Neural Networks (CNNs)"] },
+    { category: "Databases", items: ["PostgreSQL", "MongoDB", "MySQL"] },
+    { category: "Developer Tools", items: ["Docker", "Git", "GitHub", "Linux", "Postman", "CI/CD Concepts"] },
+    { category: "Core Computer Science", items: ["Data Structures & Algorithms", "Object-Oriented Programming (OOP)", "Database Management Systems (DBMS)", "Operating Systems", "Computer Networks", "System Design Fundamentals", "Software Development Life Cycle (SDLC)"] }
   ],
 
   experience: [
