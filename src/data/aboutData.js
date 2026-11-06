@@ -18,7 +18,7 @@ export const aboutData = {
       role: "Software Developer",
       company: "PASHUPATASTRA SOLUTIONS",
       period: "Jun 2026 – Present",
-      description: "Work across full-stack application development, backend services, and AI-enabled product features. Build and integrate web and mobile interfaces, REST APIs, database-backed workflows, and third-party services. Also contribute to deployment and infrastructure tasks involving Docker, Linux servers, Nginx configuration, process and port management, and CI/CD workflows."
+      description: "Build and maintain full-stack web and mobile applications using React, React Native, Node.js, and Express.js. Develop backend services and REST APIs, integrate databases and third-party/AI services, and contribute to AI-powered product features. Support production deployments and troubleshooting using Docker, Linux, Nginx, and CI/CD workflows."
     },
     {
       id: 2,
