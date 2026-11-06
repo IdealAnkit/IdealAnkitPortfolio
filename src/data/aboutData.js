@@ -1,14 +1,15 @@
 export const aboutData = {
-  summary: "I’m a Computer Science engineer focused on building at the intersection of full-stack development and AI engineering. I build AI-powered products, agentic workflows, and scalable web applications using React, Python, FastAPI, Node.js, and modern backend technologies. My work spans LLMs, RAG, LangChain, LangGraph, computer vision, and system design, backed by a strong foundation in DSA, DBMS, OS, and OOP.",
-  
+  summary: "I’m a Software Developer focused on building useful products across full-stack development, backend engineering, and applied AI. I work with React and React Native on the frontend, Python/FastAPI and Node.js/Express on the backend, and MongoDB, PostgreSQL, and MySQL for data. I also build LLM-powered features, RAG workflows, and AI integrations, and I’m comfortable taking applications through Docker-based deployment, Linux server configuration, Nginx, and CI/CD workflows.",
+
   skills: [
-    { category: "Programming Languages", items: ["Python", "JavaScript", "SQL", "Java", "C++", "C"] },
-    { category: "Generative AI & Agentic AI", items: ["LLMs", "Agentic AI", "AI Agents", "Multi-Agent Systems", "Retrieval-Augmented Generation (RAG)", "LangChain", "LangGraph", "Prompt Engineering", "Embedding Models", "Vector Databases", "LLM API Integration"] },
-    { category: "Backend & APIs", items: ["FastAPI", "Flask", "Node.js", "Express.js", "REST APIs", "WebSockets", "Server-Sent Events (SSE)", "JWT Authentication", "Async Programming", "Microservices"] },
-    { category: "AI/ML & Computer Vision", items: ["PyTorch", "TensorFlow", "OpenCV", "YOLOv8", "Convolutional Neural Networks (CNNs)"] },
-    { category: "Databases", items: ["PostgreSQL", "MongoDB", "MySQL"] },
-    { category: "Developer Tools", items: ["Docker", "Git", "GitHub", "Linux", "Postman", "CI/CD Concepts"] },
-    { category: "Core Computer Science", items: ["Data Structures & Algorithms", "Object-Oriented Programming (OOP)", "Database Management Systems (DBMS)", "Operating Systems", "Computer Networks", "System Design Fundamentals", "Software Development Life Cycle (SDLC)"] }
+    { category: "Programming Languages", items: ["Python", "JavaScript", "TypeScript", "Java", "C++", "SQL"] },
+    { category: "Frontend & Mobile", items: ["React.js", "React Native", "Vite", "Tailwind CSS", "Responsive UI Development"] },
+    { category: "Backend & APIs", items: ["Node.js", "Express.js", "FastAPI", "Flask", "REST APIs", "WebSockets", "Server-Sent Events (SSE)", "JWT Authentication", "Microservices"] },
+    { category: "Generative AI & LLM Engineering", items: ["LLMs", "Retrieval-Augmented Generation (RAG)", "LangChain", "LangGraph", "AI Agents", "Prompt Engineering", "Embedding Models", "Vector Search", "LLM API Integration"] },
+    { category: "Machine Learning & Computer Vision", items: ["PyTorch", "TensorFlow", "OpenCV", "YOLO", "Scikit-learn", "Model Integration"] },
+    { category: "Databases", items: ["MongoDB", "PostgreSQL", "MySQL"] },
+    { category: "DevOps & Infrastructure", items: ["Docker", "Docker Compose", "Linux", "Nginx", "CI/CD", "Git", "GitHub", "Server Deployment", "Environment & Process Configuration"] },
+    { category: "Core Computer Science", items: ["Data Structures & Algorithms", "Object-Oriented Programming", "DBMS", "Operating Systems", "Computer Networks", "System Design Fundamentals"] }
   ],
 
   experience: [
@@ -17,35 +18,35 @@ export const aboutData = {
       role: "Software Developer",
       company: "PASHUPATASTRA SOLUTIONS",
       period: "Jun 2026 – Present",
-      description: "Developed and maintained full-stack web and mobile applications using React, React Native, Node.js, Express.js, MongoDB, and REST APIs. Built responsive interfaces, integrated backend services, and optimized application performance for production-ready client solutions. Collaborated with cross-functional teams using Agile practices to develop, debug, test, and deploy scalable applications; contributed to AI-powered applications and API integrations."
+      description: "Build and maintain full-stack web and mobile applications using React, React Native, Node.js, and Express.js. Develop backend services and REST APIs, integrate databases and third-party/AI services, and contribute to AI-powered product features. Support production deployments and troubleshooting using Docker, Linux, Nginx, and CI/CD workflows."
     },
     {
       id: 2,
       role: "Industrial Internship – IT Systems & Data Applications",
       company: "Department of Revenue and Land Reforms",
       period: "Dec 2025 – Jan 2026",
-      description: "Supported government IT systems for land and revenue data by assisting in application workflows, data handling, and digital governance processes."
+      description: "Supported government IT systems for land and revenue data by assisting with application workflows, data handling, and digital governance processes."
     },
     {
       id: 3,
       role: "Industrial Training & Internship – Full Stack Web Development",
       company: "NIELIT Patna",
-      period: "May 2025 – June 2025",
-      description: "Built end-to-end full-stack web applications using React, Node.js, PHP, and MySQL with REST API integration and responsive UI development."
+      period: "May 2025 – Jun 2025",
+      description: "Built end-to-end web application features using React, Node.js, PHP, and MySQL, including responsive interfaces and REST API integration."
     },
     {
       id: 4,
       role: "Web Development Training & Internship",
       company: "Internshala",
       period: "Dec 2023 – Feb 2024",
-      description: "Developed responsive web interfaces with React and PHP, delivering a performance-optimized capstone project with high cross-device compatibility."
+      description: "Developed responsive web interfaces with React and PHP and completed a web development capstone project."
     },
     {
       id: 5,
       role: "Salesforce Developer Virtual Internship",
       company: "SmartInternz (AICTE & Salesforce)",
       period: "Aug 2023 – Sep 2023",
-      description: "Designed CRM workflows and data models using Apex and Lightning components to streamline simulated enterprise business processes."
+      description: "Practiced CRM workflows and data modeling using Salesforce development tools."
     }
   ],
 
