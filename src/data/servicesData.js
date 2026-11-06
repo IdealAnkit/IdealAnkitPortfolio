@@ -1,191 +1,96 @@
-import { 
-  Globe, 
-  Smartphone, 
-  Database, 
-  Server, 
-  Bot, 
-  Zap, 
-  ShoppingBag,
-  Brain,
-  Eye,
-  MessageSquareText,
+import {
+  Globe,
+  Smartphone,
+  Server,
+  Bot,
   Workflow,
-  Cloud
+  Database
 } from 'lucide-react';
 
 const servicesData = [
-  // --- Web & Mobile Development ---
-  {
-    id: 11, // SaaS
-    title: 'SaaS Application Development',
-    icon: Cloud,
-    description: [
-      'Multi-Tenant Architecture',
-      'Role-Based Access Control (RBAC)',
-      'Subscription & Billing Systems',
-      'Analytics Dashboards & Admin Panels'
-    ],
-    priceINR: '₹60,000+',
-    priceUSD: '$750+',
-    whatsappMessage: 'Hi, I am interested in SaaS Application Development.'
-  },
   {
     id: 1,
-    title: 'Custom Web Development',
+    title: 'Business Websites & Landing Pages',
     icon: Globe,
     description: [
-      'Responsive & High-Performance Websites',
-      'React, Next.js, MERN Stack',
-      'SEO Friendly Architecture',
-      'AI-Integrated & Scalable Web Solutions'
+      'Responsive React-based websites',
+      'Product, portfolio, and business landing pages',
+      'Contact forms and third-party integrations',
+      'Performance, accessibility, and basic SEO foundations'
     ],
-    priceINR: '₹25,000+',
-    priceUSD: '$300+',
-    whatsappMessage: 'Hi, I am interested in Custom Web Development services.'
+    priceINR: '₹5,000+',
+    priceUSD: '$100+',
+    whatsappMessage: 'Hi, I am interested in a business website or landing page.'
   },
   {
     id: 2,
-    title: 'Mobile App Development',
-    icon: Smartphone,
+    title: 'Full-Stack Web Applications',
+    icon: Database,
     description: [
-      'Cross-Platform Apps (React Native)',
-      'iOS & Android Support',
-      'Smooth Animations & Performance',
-      'API Integration & Offline Mode'
+      'Custom dashboards and internal tools',
+      'React frontend with Node.js or FastAPI backend',
+      'Authentication, roles, and database workflows',
+      'API integrations and responsive user experiences'
     ],
-    priceINR: '₹40,000+',
-    priceUSD: '$500+',
-    whatsappMessage: 'Hi, I am interested in Mobile App Development.'
-  },
-  {
-    id: 7,
-    title: 'E-commerce Solutions',
-    icon: ShoppingBag,
-    description: [
-      'Custom Storefronts & Dashboards',
-      'Payment Gateway Integration',
-      'Inventory Management Systems',
-      'Secure Checkout Flows'
-    ],
-    priceINR: '₹45,000+',
-    priceUSD: '$550+',
-    whatsappMessage: 'Hi, I am interested in E-commerce Solutions.'
-  },
-
-  // --- AI & Machine Learning ---
-  {
-    id: 5,
-    title: 'Generative AI Solutions',
-    icon: Bot,
-    description: [
-      'Custom LLM Integration',
-      'Chatbots & AI Assistants',
-      'RAG Implementation',
-      'AI-Powered Automation'
-    ],
-    priceINR: '₹50,000+',
-    priceUSD: '$600+',
-    whatsappMessage: 'Hi, I am interested in Generative AI Implementation.'
-  },
-  {
-    id: 8,
-    title: 'Machine Learning Models',
-    icon: Brain,
-    description: [
-      'Predictive Analytics & Forecasting',
-      'Classification & Regression Models',
-      'Data Mining & Pattern Recognition',
-      'TensorFlow & PyTorch Solutions'
-    ],
-    priceINR: '₹45,000+',
-    priceUSD: '$550+',
-    whatsappMessage: 'Hi, I need assistance with Custom Machine Learning Models.'
-  },
-  {
-    id: 9,
-    title: 'Computer Vision',
-    icon: Eye,
-    description: [
-      'Object Detection & Recognition',
-      'Face Recognition Systems',
-      'Image Segmentation & Processing',
-      'Video Analytics Pipelines'
-    ],
-    priceINR: '₹55,000+',
-    priceUSD: '$650+',
-    whatsappMessage: 'Hi, I am interested in Computer Vision Solutions.'
-  },
-  {
-    id: 10,
-    title: 'NLP & Text Analysis',
-    icon: MessageSquareText,
-    description: [
-      'Sentiment Analysis & Categorization',
-      'Document Summarization',
-      'Named Entity Recognition (NER)',
-      'Language Translation Systems'
-    ],
-    priceINR: '₹40,000+',
-    priceUSD: '$480+',
-    whatsappMessage: 'Hi, I need NLP & Text Analysis services.'
-  },
-
-  // --- Infrastructure & Optimization ---
-  {
-    id: 12, // API
-    title: 'API Development & Integration',
-    icon: Workflow,
-    description: [
-      'REST & GraphQL API Design',
-      'Third-Party API Integration',
-      'Secure Authentication (JWT, OAuth)',
-      'Microservices-Ready Architecture'
-    ],
-    priceINR: '₹20,000+',
+    priceINR: '₹12,000+',
     priceUSD: '$250+',
-    whatsappMessage: 'Hi, I am interested in API Development & Integration.'
-  },
-  {
-    id: 4,
-    title: 'DevOps Implementation',
-    icon: Server,
-    description: [
-      'CI/CD Pipeline Setup',
-      'Cloud Deployment (AWS/Azure)',
-      'Docker & Kubernetes',
-      'Automated Testing Workflows'
-    ],
-    priceINR: '₹30,000+',
-    priceUSD: '$400+',
-    whatsappMessage: 'Hi, I am looking for DevOps Implementation services.'
+    whatsappMessage: 'Hi, I am interested in a custom full-stack web application.'
   },
   {
     id: 3,
-    title: 'Database Design',
-    icon: Database,
+    title: 'AI Assistants & RAG Solutions',
+    icon: Bot,
     description: [
-      'SQL & NoSQL Architectures',
-      'Schema Optimization & Indexing',
-      'Data Security & Backups',
-      'Scalable Data Models'
+      'LLM-powered chatbots and assistants',
+      'Chat with PDFs and business documents',
+      'RAG pipelines, embeddings, and retrieval',
+      'LangChain, LangGraph, and model API integration'
+    ],
+    priceINR: '₹10,000+',
+    priceUSD: '$200+',
+    whatsappMessage: 'Hi, I am interested in an AI assistant or RAG solution.'
+  },
+  {
+    id: 4,
+    title: 'Backend APIs & Integrations',
+    icon: Workflow,
+    description: [
+      'REST API design and implementation',
+      'Node.js, Express.js, and Python/FastAPI',
+      'Database design and integration',
+      'Authentication and third-party service connections'
+    ],
+    priceINR: '₹4,000+',
+    priceUSD: '$80+',
+    whatsappMessage: 'Hi, I am interested in backend API development or integration.'
+  },
+  {
+    id: 5,
+    title: 'React Native Mobile Applications',
+    icon: Smartphone,
+    description: [
+      'Cross-platform Android and iOS app development',
+      'API integration and local data storage',
+      'Offline-first workflows where appropriate',
+      'Reusable components and responsive mobile UI'
     ],
     priceINR: '₹15,000+',
-    priceUSD: '$200+',
-    whatsappMessage: 'Hi, I need assistance with Database Design & Optimization.'
+    priceUSD: '$300+',
+    whatsappMessage: 'Hi, I am interested in React Native mobile app development.'
   },
   {
     id: 6,
-    title: 'Performance Optimization',
-    icon: Zap,
+    title: 'Deployment & DevOps Support',
+    icon: Server,
     description: [
-      'Core Web Vitals Improvement',
-      'Backend Latency Reduction',
-      'Code Refactoring & Cleanup',
-      'Faster Load Times'
+      'Docker and Docker Compose setup',
+      'Linux server deployment and configuration',
+      'Nginx reverse proxy and domain setup',
+      'CI/CD workflows, logs, and basic monitoring'
     ],
-    priceINR: '₹10,000+',
-    priceUSD: '$120+',
-    whatsappMessage: 'Hi, I need Performance Optimization for my website/app.'
+    priceINR: '₹3,000+',
+    priceUSD: '$60+',
+    whatsappMessage: 'Hi, I am interested in deployment or DevOps support.'
   }
 ];
 
